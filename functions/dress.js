@@ -19,6 +19,7 @@ module.exports = async (lat, lon) => {
     clothes(toWear, res.data.data)
     precipitation(toWear, res.data.data);
     cloud(toWear, res.data.data)
+    console.log(toWear)
     return toWear;
   } catch(e) {
       return {

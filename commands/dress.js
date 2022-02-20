@@ -9,6 +9,7 @@ module.exports.run = async (client, message, args) => {
     let latlong = await longlat(args.join(" "));
 
     let a = await dress(latlong.lat, latlong.lng);
+    if (a.error) return message.channel.send("Sorry! We don't support that area yet!")
     message.channel.send(dressEmbed(latlong.url, name(latlong.area), a));  
 };
 
@@ -27,13 +28,15 @@ function dressEmbed(url, areaName, toWear) {
                 fields: [
                     {
                         name: "Clothes",
-                        value: toWear.clothes.join("\n")
+                        value: toWear.clothes.join("\n"),
                     },
-                     {
+                    {
                         name: "Utility",
-                        value: toWear.utility.join("\n")
-                     },
- 
+                        value:
+                            toWear.utility.length == 0
+                                ? "\u200b"
+                                : toWear.utility.join("\n"),
+                    },
                 ],
                 timestamp: new Date(),
             },

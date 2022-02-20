@@ -17,7 +17,7 @@ module.exports.run = (client, message, args) => {
                 fields: [
                     {
                         name: "COMMANDS",
-                        value: "**#help:** To open this page! :) \n **#weather {location}** To check the weather \n **#airquality {location}:** Check the air quality of your region and recommendations to people with specific conditions \n **#dress {location}:** Give recommendations on what to wear based on the current climate condition THROUGHOUT THE ENTIRE DAY!",
+                        value: "**#help:** To open this page! :) \n **#weather {location}** To check the weather \n **#airquality {location}:** Check the air quality of your region and recommendations to people with specific conditions \n **#dress {location}:** Give recommendations on what to wear based on predicted temperatures and precipitation",
 
                         //inline: false
                     },
